@@ -20,7 +20,174 @@
         
         <aspect name="mon:monitoringAspect">
             <title>Monitoring Aspect</title>
-            <description>Monitoring Service capability enabled</description>
+	    <description>Monitoring Service capability enabled</description>
+            <properties>
+                <property name="mon:nodeSvcBeforeAddAspect">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies beforeAddAspect</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcBeforeArchiveNode">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies beforeArchiveNode</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcBeforeCreateNode">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies beforeCreateNode</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcBeforeCreateStore">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies beforeCreateStore</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcBeforeDeleteAssociation">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies beforeDeleteAssociation</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcBeforeDeleteChildAssociation">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies beforeDeleteChildAssociation</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcBeforeDeleteNode">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies beforeDeleteNode</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcBeforeMoveNode">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies beforeMoveNode</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcBeforeRemoveAspect">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies beforeRemoveAspect</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcBeforeSetNodeType">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies beforeSetNodeType</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcBeforeUpdateNode">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies beforeUpdateNode</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcOnAddAspect">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies onAddAspect</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcOnCreateAssociation">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies onCreateAssociation</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcOnCreateNode">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies onCreateNode</title>
+                    <type>d:boolean</type>
+                    <default>true</default>
+                </property>
+                <property name="mon:nodeSvcOnCreateStore">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies onCreateStore</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcOnDeleteAssociation">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies onDeleteAssociation</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcOnDeleteChildAssociation">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies onDeleteChildAssociation</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcOnDeleteNode">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies onDeleteNode</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcOnMoveNode">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies onMoveNode</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcOnRemoveAspect">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies onRemoveAspect</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcOnSetNodeType">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies onSetNodeType</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcOnUpdateNode">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies onUpdateNode</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:nodeSvcOnUpdateProperties">
+                    <title>monitor on org.alfresco.repo.node.NodeServicePolicies onUpdateProperties</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:contentSvcOnContentPropertyUpdate">
+                    <title>monitor on org.alfresco.repo.content.ContentServicePolicies onContentPropertyUpdate</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:contentSvcOnContentRead">
+                    <title>monitor on org.alfresco.repo.content.ContentServicePolicies onContentRead</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:contentSvcOnContentUpdate">
+                    <title>monitor on org.alfresco.repo.content.ContentServicePolicies onContentUpdate</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:copySvcBeforeCopy">
+                    <title>monitor on org.alfresco.repo.node.CopyServicePolicies beforeCopy</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:copySvcOnCopyComplete">
+                    <title>monitor on org.alfresco.repo.node.CopyServicePolicies onCopyComplete</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:copySvcOnCopyNode">
+                    <title>monitor on org.alfresco.repo.node.CopyServicePolicies onCopyNode</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:versionSvcBeforeCreateVersion">
+                    <title>monitor on org.alfresco.repo.version.VersionServicePolicies beforeCreateVersion</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:versionSvcAfterCreateVersion">
+                    <title>monitor on org.alfresco.repo.version.VersionServicePolicies afterCreateVersion</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:versionSvcOnCreateVersion">
+                    <title>monitor on org.alfresco.repo.version.VersionServicePolicies onCreateVersion</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+                <property name="mon:versionSvcCalculateVersionLabel">
+                    <title>monitor on org.alfresco.repo.version.VersionServicePolicies calculateVersionLabel</title>
+                    <type>d:boolean</type>
+                    <default>false</default>
+                </property>
+            </properties>
         </aspect>
     </aspects>
 </model>
