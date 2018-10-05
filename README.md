@@ -7,6 +7,11 @@ Actually it includes the following libraries:
 
  * DropWizard Metrics (Core, Servlets)
  * Metrics ElasticSearch Reporter provided by Elastic
+ 
+For tracking Java Service you can use two different approaches:
+
+ * adding Monitoring Aspect to contents and set which Behaviors you want to trace
+ * overriding the Alfresco Public Services (Java API) adding the related MonitoringMethodInterceptor 
 
 This module is based on an Alfresco Platform JAR Module - SDK 3
 
