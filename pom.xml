@@ -13,6 +13,7 @@
     
     	<metrics.version>4.0.0</metrics.version>
     	<metrics.reporter.elasticsearch.version>2.2.0</metrics.reporter.elasticsearch.version>
+    	<metrics.integration.spring>3.1.3</metrics.integration.spring>
     	
         <!-- Alfresco Maven Plugin version to use -->
         <alfresco.sdk.version>3.0.1</alfresco.sdk.version>
@@ -94,6 +95,12 @@
 			<groupId>io.dropwizard.metrics</groupId>
 			<artifactId>metrics-servlets</artifactId>
 			<version>${metrics.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.ryantenney.metrics</groupId>
+		    <artifactId>metrics-spring</artifactId>
+		    <version>${metrics.integration.spring}</version>
 		</dependency>
 		
 		<dependency>
@@ -195,6 +202,11 @@
                         	<groupId>org.elasticsearch</groupId>
 							<artifactId>metrics-elasticsearch-reporter</artifactId>
 							<version>${metrics.reporter.elasticsearch.version}</version>
+                        </moduleDependency>
+                        <moduleDependency>
+                        	<groupId>com.ryantenney.metrics</groupId>
+						    <artifactId>metrics-spring</artifactId>
+						    <version>${metrics.integration.spring}</version>
                         </moduleDependency>
                     </platformModules>
                 </configuration>

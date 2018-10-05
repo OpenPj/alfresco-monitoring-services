@@ -1,0 +1,38 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:metrics="http://www.ryantenney.com/schema/metrics"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.ryantenney.com/schema/metrics
+           http://www.ryantenney.com/schema/metrics/metrics.xsd">
+
+    <!-- Creates a MetricRegistry bean -->
+    <metrics:metric-registry id="metricRegistry" />
+
+    <!-- Creates a HealthCheckRegistry bean (Optional) -->
+    <metrics:health-check-registry id="health" />
+
+    <!-- Registers BeanPostProcessors with Spring which proxy beans and capture metrics -->
+    <!-- Include this once per context (once in the parent context and in any subcontexts) -->
+    <metrics:annotation-driven metric-registry="metricRegistry" />
+
+    <!-- Example reporter definiton. Supported reporters include jmx, slf4j, graphite, and others. -->
+    <!-- Reporters should be defined only once, preferably in the parent context -->
+    <metrics:reporter type="console" metric-registry="metricRegistry" period="1m" />
+
+
+	<!-- ElasticsearchReporter -->
+	<!-- 
+	<bean id="elasticSearchReporter" class="org.elasticsearch.metrics.ElasticsearchReporter">
+		<property name="forRegistry" ref="metricRegistry" />
+		<property name="hosts" value="${elasticsearch.hosts}" />
+	</bean>
+	
+	
+	-->
+	<!-- 
+	<metrics:reporter type="elastic" metric-registry="metricRegistry" period="1m" />
+	-->
+
+</beans>
