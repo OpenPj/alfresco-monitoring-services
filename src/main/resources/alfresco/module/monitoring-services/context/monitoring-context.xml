@@ -38,7 +38,6 @@
     <!-- Reporters should be defined only once, preferably in the parent context -->
     <metrics:reporter type="console" metric-registry="metricRegistry" period="1m" />
 
-
 	<!-- ElasticsearchReporter -->
 	<!-- 
 	<bean id="elasticSearchReporter" class="org.elasticsearch.metrics.ElasticsearchReporter">
@@ -51,5 +50,12 @@
 	<!-- 
 	<metrics:reporter type="elastic" metric-registry="metricRegistry" period="1m" />
 	-->
+	
+	<bean id="nodeServiceMonitoringBehavior"
+		  class="org.alfresco.hackaton.monitoring.behaviors.NodeServiceMonitoringBehaviors"
+		  init-method="init">
+		<property name="metricRegistry" ref="metricRegistry"/>
+		<property name="policyComponent" ref="policyComponent"/>	  
+	</bean>
 
 </beans>
