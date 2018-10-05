@@ -57,5 +57,37 @@
 		<property name="metricRegistry" ref="metricRegistry"/>
 		<property name="policyComponent" ref="policyComponent"/>	  
 	</bean>
+	
+	<bean id="NodeServiceMonitoringInterceptor" 
+		  class="org.alfresco.hackaton.monitoring.interceptors.MonitoringServiceMethodInterceptor"
+		  init-method="init">
+		<property name="metricRegistry" ref="metricRegistry" />
+		<property name="serviceName" value="NodeService" />
+	</bean>
+	
+	<bean id="NodeService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces">
+            <list>
+                <value>org.alfresco.service.cmr.repository.NodeService</value>
+            </list>
+        </property>
+        <property name="target">
+            <ref bean="nodeService"/>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <idref local="NodeService_transaction"/>
+                <idref local="AuditMethodInterceptor"/>
+                <idref local="exceptionTranslator"/>
+                <idref bean="NodeService_security"/>
+                <idref bean="disableAuditablePolicySetPropertyInterceptor"/>
+				<idref bean="NodeServiceMonitoringInterceptor" />
+                <!-- Bug prevents use.
+                     Also, the interception of this sort will lead to issues with other clients
+                <idref bean="mlTranslationInterceptor"/>
+                -->
+            </list>
+        </property>
+    </bean>
 
 </beans>
